@@ -1,0 +1,51 @@
+
+
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, Hbase.
+---------------------------------------------------------------------
+
+
+---------------Tarea Fase 4---------------- 
+
+
+2. Código de las consultas y análisis de resultados.
+
+
+// Consulta de plantas en Riesgo potencial hasta el año 2022
+
+
+public void SelectPlantas()
+{
+    using (SqlConnection connection = Connect())
+    {
+        connection.Open();  // Abre la conexión
+
+        string query = "SELECT * FROM Plantas";  // Consulta SQL
+
+        SqlCommand command = new SqlCommand(query, connection);  // Comando SQL
+
+        SqlDataReader reader = command.ExecuteReader();  // Ejecuta la consulta
+
+        while (reader.Read())  // Lee los resultados
+        {
+            Console.WriteLine($"PLantas: {reader["Plantas en Riesgo"]}, Riesgo Potencial: {reader["2022"]}");
+        }
+
+        connection.Close();  // Cierra la conexión
+    }
+}
+
+
+-----------------------------//----------------------

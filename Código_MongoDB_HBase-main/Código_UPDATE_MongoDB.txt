@@ -1,0 +1,53 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, MongoDB.
+---------------------------------------------------------------------
+
+
+---------------Tarea Fase 4---------------- 
+
+
+2. Código de las consultas y análisis de resultados.
+
+R/:  2.1 Consultas Básicas: 
+
+Insertar datos de prueba, múltiples documentos usar un script o el shell directamente.
+Inserción, selección, actualización y eliminación de documentos.
+
+-------------------------
+Código para Actualizar	
+-------------------------
+
+Código para Actualización de uno o más Datos Documento. 
+
+// Código para la Actualización en la Colección Plantas
+
+Código para Actualizar Características de uno o más datos Documento.
+// Actualizar el `estado de Riesgo` y `El Peligro de Extinsión`
+db.Plantas.updateOne(
+  { "Nombre científico": "Acacia albida" },
+  { $set: { "Estado de riesgo": "En peligro crítico" } } )
+
+// Actualizar Datos Confirmados con nuevas características
+
+
+// Actualizar el `estado de Riesgo` y `El Peligro de Extinsión`
+db.Plantas.updateOne(
+  { "Nombre científico": "AMARYLLIDACEAE" },
+  { $set: { "Estado de riesgo": "En peligro crítico" } } )
+
+// Actualizar Datos Confirmados con nuevas características
+
+--------------------//--------------
+

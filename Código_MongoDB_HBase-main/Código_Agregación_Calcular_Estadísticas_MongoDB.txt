@@ -1,0 +1,74 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, MongoDB.
+---------------------------------------------------------------------
+
+
+---------------Tarea Fase 4---------------- 
+
+
+2. Código de las consultas y análisis de resultados.
+
+R/: 2.3  Consultas de Agregación para Calcular Estadísticas: 
+
+Consultas de Agregación para calcular datos de prueba, múltiples documentos usar un script o el shell directamente
+Contar, sumar, promediar, etc.
+
+-------------------------
+Código para Consultas	
+-------------------------
+
+Código para Consultas de Agregación para Calcular Estadísticas.
+
+Contar Plantas por Estado de Riesgo:  	
+
+db.Plantas.aggregate([ { $group: 
+  { _id: "$Estado de riesgo", total: { $sum: 1 } } } ])  
+//Filtrar para Contar Plantas por Estado de Riesgo.
+
+
+Sumar el promedio del año de registro:  
+
+db.especies.aggregate([  {    $group:
+   { _id: "$nivel_nacional.libros_rojos",  
+ total_especies: { $sum: 1 }   }  } ])  
+// Se suman en tablas y secuencias.
+//Sumar en libros de registro de registro.
+
+
+Sumar por años de registro:  
+
+// Sumar especies por años para dar una generalización
+db.plantas.aggregate([  {   $match: 
+{ año_actualizacion: { $in: [2001, 2003] }  } }, 
+{ $group: { _id: "Suma de especies en 2001 y 2003",total_especies: { $sum: 1 } } }])
+//Sumar especies registradas de dos años diferentes.
+
+
+Calcular el promedio del año de registro:  	
+
+db.Plantas.aggregate([  { $group: 
+{ _id: null, promedioAño: { $avg: "$Año" } } }])
+// Calcular el promedio del año de registro
+// Calcular promedios anunales en los Registros.
+
+
+Listar Familias únicas:  	
+
+db.Plantas.distinct("Familia")  
+// Listar familias únicas
+//Orden Consecutivo de familias únicas. 
+
+
+-----------------------//-----------------------

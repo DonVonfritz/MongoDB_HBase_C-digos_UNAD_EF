@@ -1,0 +1,60 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, MongoDB.
+---------------------------------------------------------------------
+
+
+---------------Tarea Fase 4---------------- 
+
+
+2. Código de las consultas y análisis de resultados.
+
+R/:  2.2 Consultas con Filtros y Operadores: 
+
+Filtrar datos de prueba, múltiples documentos usar un script o el shell directamente.
+
+
+-------------------------
+Código para Filtrar	
+-------------------------
+
+Código para Filtrar uno o más Registros, Datos, Documento.
+
+
+Filtrar por estado de Riesgo: 
+ 
+db.Plantas.find(
+{ "Estado de riesgo": "En peligro" }) 
+
+//Filtrar por estado de Riesgo: En Peligro.  
+
+
+Filtrar por Año mayor a 2015:
+  	
+db.Plantas.find(
+{ "Año": { $gt: 2015 } }) 
+
+//Filtrar por Año mayor a 2015. 
+
+
+Filtrar por Multiples Condiciones:  	
+
+db.Plantas.find(  
+   { $and: [  { "Estado de riesgo": "Vulnerable" },
+    { "Año": { $gte: 2010 } }  ]  }) 
+
+//Filtrar para encontrar por multiples condiciones
+
+
+-----------------//--------------------

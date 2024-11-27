@@ -1,0 +1,48 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, Hbase.
+---------------------------------------------------------------------
+
+---------------Tarea Fase 4---------------- 
+
+2. Apache HBase:  Implementar operaciones en HBase
+
+--------------
+
+Proyecto HBase: Gestión de Datos sobre Plantas en Riesgo en Colombia
+
+
+2. Operaciones en HBase
+
+Operaciones de Escritura, (Inserción, Actualización y Elimminación)
+
+Inserción de una nueva planta:
+
+put 'plantas_en_riesgo', '2', 'informacion_basica:nombre_comun', 'Café'
+put 'plantas_en_riesgo', '2', 'informacion_basica:nombre_cientifico', 'Coffea'
+
+
+Actualización de una planta existente:
+
+put 'plantas_en_riesgo', '1', 'caracteristicas:estado_conservacion', 'En peligro crítico'
+
+
+Eliminación de una planta:
+
+delete 'plantas_en_riesgo', '2'
+
+
+
+----------------------------//-----------------------------
+

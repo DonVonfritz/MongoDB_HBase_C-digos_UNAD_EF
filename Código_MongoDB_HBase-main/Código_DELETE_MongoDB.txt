@@ -1,0 +1,60 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, MongoDB.
+---------------------------------------------------------------------
+
+
+---------------Tarea Fase 4---------------- 
+
+
+2. Código de las consultas y análisis de resultados.
+
+R/:  2.1 Consultas Básicas: 
+
+Insertar datos de prueba, múltiples documentos usar un script o el shell directamente
+inserción, selección, actualización y eliminación de documentos.
+
+-------------------------
+Código para Eliminar	
+-------------------------
+
+Código para Eliminar uno o más Registros, Datos, Documento.
+
+//Condición de Busqueda, eliminar la planta Eucalyptus globulus.
+
+db.Plantas.deleteOne(
+{ "Nombre científico": "Eucalyptus globulus" })
+// Eliminar Datos Confirmados.  
+
+
+
+// Eliminar el `estado de Riesgo` y `El Peligro de Extinsión`
+
+db.Plantas.deleteOne(
+  { "Nombre científico": "AMARYLLIDACEAE" },
+  { { "Estado de riesgo": "En peligro crítico" } } )
+
+// Eliminar Datos Confirmados con nuevas características
+
+
+
+//Eliminar todas las plantas con Estado de Riesgo en peligro crítico
+
+db.Plantas.deleteMany(
+{ "Estado de riesgo": "En peligro crítico" }) 
+// Eliminar muchos registros.  
+
+
+--------------------//--------------
+

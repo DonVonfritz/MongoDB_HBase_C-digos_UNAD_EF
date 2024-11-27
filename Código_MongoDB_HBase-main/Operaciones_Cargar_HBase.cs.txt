@@ -1,0 +1,48 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, Hbase.
+---------------------------------------------------------------------
+
+---------------Tarea Fase 4---------------- 
+
+2. Apache HBase:  Implementar operaciones en HBase
+
+--------------
+
+Proyecto HBase: Gestión de Datos sobre Plantas en Riesgo en Colombia
+
+
+2. Operaciones en HBase
+
+Cargar los Datos en la Tabla de HBase
+
+Para cargar los datos en la tabla plantas_en_riesgo, utilice un archivo CSV que contiene la 
+información de las plantas, inserté los datos en la tabla.
+
+
+CÓDIGO
+
+put 'plantas_en_riesgo', '1', 'informacion_basica:nombre_comun', 'Orquídea'
+put 'plantas_en_riesgo', '1', 'informacion_basica:nombre_cientifico', 'Orchidaceae'
+put 'plantas_en_riesgo', '1', 'informacion_basica:familia', 'Orquídeas'
+put 'plantas_en_riesgo', '1', 'caracteristicas:altura', '1.5 m'
+put 'plantas_en_riesgo', '1', 'caracteristicas:habitat', 'Bosques húmedos'
+put 'plantas_en_riesgo', '1', 'caracteristicas:estado_conservacion', 'En peligro'
+put 'plantas_en_riesgo', '1', 'distribucion:region', 'Amazonas'
+put 'plantas_en_riesgo', '1', 'distribucion:coordenadas', '3.4653, -70.5335'
+
+
+
+----------------------------//-----------------------------
+

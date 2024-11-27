@@ -1,0 +1,108 @@
+
+
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, Hbase.
+---------------------------------------------------------------------
+
+---------------Tarea Fase 4---------------- 
+
+2. Apache HBase
+
+--------------
+
+Proyecto HBase: Gestión de Datos sobre Plantas en Riesgo en Colombia
+
+1. Creación de la Tabla en HBase
+
+Para comenzar, se creará una tabla en HBase que almacenará información sobre las plantas en riesgo
+de extinción en Colombia. Utilice un conjunto de datos que contiene información relevante sobre 
+diversas especies de vegetación Colombiana.
+
+Definición de la Tabla
+
+Nombre de la tabla: plantas_en_riesgo
+
+Familias de columnas:
+
+informacion_basica: Contendrá datos generales sobre cada planta.
+nombre_comun: Nombre común de la planta.
+nombre_cientifico: Nombre científico de la planta.
+familia: Familia a la que pertenece la planta.
+caracteristicas: Contendrá características específicas de las plantas.
+altura: Altura promedio de la planta.
+habitat: Tipo de hábitat donde se encuentra la planta.
+estado_conservacion: Estado de conservación según la legislación colombiana.
+distribucion: Contendrá información sobre la distribución geográfica.
+region: Regiones de Colombia donde se encuentra la planta.
+coordenadas: Coordenadas geográficas de la planta.
+
+
+Comando para crear la tabla en HBase
+
+
+CÓDIGO:
+
+create 'plantas_en_riesgo', 'informacion_basica', 'caracteristicas', 'distribucion'
+
+
+Consultas de Selección, Filtrado y Recorrido
+
+Para realizar consultas sobre los datos, se pueden utilizar los siguientes comandos:
+
+Seleccionar todos los datos de una planta específica:
+
+CÓDIGO
+
+get 'plantas_en_riesgo', '1'
+Filtrar plantas por estado de conservación:
+
+scan 'plantas_en_riesgo', {FILTER => "PrefixFilter('En peligro')"}
+
+
+Recorrer todas las plantas en riesgo:
+
+scan 'plantas_en_riesgo'
+
+
+Operaciones de Escritura (Inserción, Actualización y Eliminación)
+
+Inserción de una nueva planta:
+
+put 'plantas_en_riesgo', '2', 'informacion_basica:nombre_comun', 'Café'
+put 'plantas_en_riesgo', '2', 'informacion_basica:nombre_cientifico', 'Coffea'
+
+
+Actualización de una planta existente:
+
+put 'plantas_en_riesgo', '1', 'caracteristicas:estado_conservacion', 'En peligro crítico'
+
+
+Eliminación de una planta:
+
+delete 'plantas_en_riesgo', '2'
+
+
+3. Documentación
+Estructura de la Tabla en HBase
+La tabla plantas_en_riesgo está estructurada en tres familias de columnas que almacenan información básica,
+ características y distribución geográfica de las plantas en riesgo. Cada fila en la tabla representa una especie de planta, identificada por su clave única.
+
+Explicación de las Operaciones Realizadas en HBase y Resultados Obtenidos
+Se llevaron a cabo diversas operaciones en la tabla plantas_en_riesgo, incluyendo la creación de la tabla, 
+la carga de datos, consultas, y operaciones de escritura. Los resultados obtenidos permiten acceder a información detallada 
+sobre las plantas en riesgo en Colombia, facilitando así la investigación y la toma de decisiones en materia de
+
+
+----------

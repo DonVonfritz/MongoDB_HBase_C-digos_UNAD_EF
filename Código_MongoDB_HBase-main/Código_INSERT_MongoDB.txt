@@ -1,0 +1,72 @@
+
+----------------------------------------------------------------------
+Universidad Nacional Abierta y a Distancia  UNAD
+Vicerrectoría Académica y de Investigación
+
+Curso: Big Data
+
+Erick Fajardo
+eafajardob@unadvirtual.edu.co
+Código: 202016911_50
+
+Tarea 4   Almacenamiento y Consultas de Datos en Big Data.
+
+Herramientas, MongoDB.
+---------------------------------------------------------------------
+
+
+---------------Tarea Fase 4---------------- 
+
+
+2. Código de las consultas y análisis de resultados.
+
+R/:  2.1 Consultas Básicas: 
+
+Insertar datos de prueba, múltiples documentos usar un script o el shell directamente.
+Inserción, selección, actualización y eliminación de documentos.
+
+----------------------
+Código para inserción	
+----------------------
+
+Datos de Prueba, Multiples. 
+
+// Código para la inserción de Muchos Documentos de (387) unidades por Colección Plantas
+
+
+db.Plantas.insertMany([
+  {
+    "Familia": "ARECACEAE",
+    "Nombre científico": "Attalea victoriana Dugand",
+    "Estado de riesgo": "En peligro",    // Nueva característica 
+    "Año": 2015
+  },
+  {
+    "Familia": "FABACEAE",
+    "Nombre científico": "Acacia albida",
+    "Estado de riesgo": "Vulnerable",     // Nueva característica
+    "Año": 2018
+  },
+  // Añade más documentos...
+])  
+
+
+-----------//-----------
+
+----------------------
+Código para inserción	
+----------------------
+
+Datos Unitarios y Características.
+
+db.Plantas.insertOne({
+  "Familia": "MYRTACEAE",
+  "Nombre científico": "Eucalyptus globulus",
+  "Estado de riesgo": "Preocupación menor",
+  "Año": 2020          // Desde aquí para añadir más documentos…     })
+
+//Insertar Datos Confirmados con nuevas características.  
+
+
+-----------------//--------------
+
